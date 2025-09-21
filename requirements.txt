@@ -1,0 +1,10 @@
+langchain
+langchain-community
+pypdf
+chromadb
+langchain-chroma
+langchain-huggingface
+groq
+langchain-groq
+langchain-core
+sentence-transformers==2.4.0

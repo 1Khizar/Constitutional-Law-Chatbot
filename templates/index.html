@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitutional Law Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f4f7; /* clean light background */
+            }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff; /* pure white container */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0a2e5c; /* dark navy legal tone */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+
+        .chat-container {
+            height: 350px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #fafafa; /* very light gray inside chat */
+    border-bottom: 1px solid #ddd;
+
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #3498db;
+            color: white;
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .welcome {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 100px;
+        }
+
+        .input-section {
+            background: #f9f9f9;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            text-align: center;
+            color: #3498db;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        .error {
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚖ Constitutional Law Chatbot</h1>
+            <p>Ask me questions about the Constitution of Pakistan.</p>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome">
+                
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="questionInput" placeholder="Type your legal question here..." />
+            <button id="sendButton" onclick="sendQuestion()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let isProcessing = false;
+        const chatContainer = document.getElementById('chatContainer');
+        const questionInput = document.getElementById('questionInput');
+        const sendButton = document.getElementById('sendButton');
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = text;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // Remove welcome message after first message
+            const welcome = chatContainer.querySelector('.welcome');
+            if (welcome) welcome.remove();
+        }
+
+        function showLoading() {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'loading';
+            loadingDiv.id = 'loading';
+            loadingDiv.textContent = 'Searching the Constitution...';
+            chatContainer.appendChild(loadingDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function hideLoading() {
+            const loading = document.getElementById('loading');
+            if (loading) loading.remove();
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = 'Error: ' + message;
+            chatContainer.appendChild(errorDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        async function sendQuestion() {
+            const question = questionInput.value.trim();
+            if (!question || isProcessing) return;
+
+            isProcessing = true;
+            sendButton.disabled = true;
+            sendButton.textContent = 'Sending...';
+
+            addMessage(question, true);
+            questionInput.value = '';
+            showLoading();
+
+            try {
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: question })
+                });
+
+                const data = await response.json();
+                hideLoading();
+
+                if (response.ok) {
+                    addMessage(data.answer);
+                } else {
+                    showError(data.error || 'Something went wrong');
+                }
+            } catch (error) {
+                hideLoading();
+                showError('Network error. Please try again.');
+            }
+
+            isProcessing = false;
+            sendButton.disabled = false;
+            sendButton.textContent = 'Send';
+        }
+
+        // Send on Enter key
+        questionInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !isProcessing) {
+                sendQuestion();
+            }
+        });
+    </script>
+</body>
+</html>
