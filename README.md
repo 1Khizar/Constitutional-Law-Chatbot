@@ -23,17 +23,16 @@ Legal research in Pakistan is often complex and time-consuming. This project is 
 ---
 
 ## 📂 Project Structure  
-
+---
 Constitutional-Law-Chatbot/
--│── app.py # Main Flask app
--│── requirements.txt # Dependencies
--│── .env # API keys (not pushed to GitHub)
+│── app.py # Main Flask app
+│── requirements.txt # Dependencies
+│── .env # API keys (not pushed to GitHub)
 │── static/ # CSS, JS, images
 │── templates/ # HTML files
 │── data/ # Constitution dataset
 │── README.md # Project documentation
 │── .gitignore # Ignore sensitive files
-
 
 ---
 
