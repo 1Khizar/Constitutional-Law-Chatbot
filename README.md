@@ -49,24 +49,26 @@ Constitutional-Law-Chatbot/
    pip install -r requirements.txt
 
 4. **Set up environment variables** 
-   Create a .env file in the project root:
+   - Create a .env file in the project root:
      ```bash
    GROQ_API_KEY=your_api_key_here
 
 5. **Run the app**  
-Run the app
+- Run the app
   ```bash
-   python app.py
+python app.py
+
 
 6. **Run the app** 
-   Open in browser
+   - Open in browser
 ```bash
 http://127.0.0.1:5000/
 
 ```
 ## 📸 Demo  
 
-![Constitutional Law Chatbot](static/screenshot.png)
+<img width="702" height="435" alt="Constitutional Law Chatbot" src="https://github.com/user-attachments/assets/f91f12e2-48c4-4f1f-9ec6-095f492e5b5b" />
+
 
 ## 👨‍💻 Author
 **Khizar Ishtiaq**
