@@ -62,7 +62,7 @@ python app.py
 
 6. **Run the app**
 
-      ```bash
+   ```bash
  - Open in browser
 http://127.0.0.1:5000/
 
