@@ -69,6 +69,8 @@ Constitutional-Law-Chatbot/
 
 <img width="702" height="435" alt="Constitutional Law Chatbot" src="https://github.com/user-attachments/assets/f91f12e2-48c4-4f1f-9ec6-095f492e5b5b" />
 
+<img width="673" height="440" alt="Constitutional Law Chatbot" src="https://github.com/user-attachments/assets/4e21992b-c09d-4000-8c4c-3717bbca1eb1" />
+
 
 ## 👨‍💻 Author
 **Khizar Ishtiaq**
