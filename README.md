@@ -56,11 +56,12 @@ Constitutional-Law-Chatbot/
 
 5. **Run the app**
     ```bash
- Run the app
-python app.py
+    python app.py
+    ```
 
- Open in browser
-http://127.0.0.1:5000/
+    Open in browser  
+    http://127.0.0.1:5000/
+
 
 ---
 
