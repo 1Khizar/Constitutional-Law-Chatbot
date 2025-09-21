@@ -6,7 +6,7 @@ Legal research in Pakistan is often complex and time-consuming. This project is 
 
 ## 🚀 Features  
 - ⚖️ Provides accurate answers from the **Constitution of Pakistan**  
-- ⚡ Fast and reliable responses using **Llama 3.3-70B (Groq LLM)**  
+- ⚡ Fast and reliable responses using **Groq Llama-3.3-70B Versatile**  
 - 🔎 Context-aware retrieval with **LangChain + ChromaDB + HuggingFace embeddings**  
 - 🌐 Simple, user-friendly interface built with **Flask + HTML/CSS**  
 
@@ -25,7 +25,7 @@ Legal research in Pakistan is often complex and time-consuming. This project is 
 ## 📂 Project Structure  
 
 Constitutional-Law-Chatbot/
-│── app.py # Main Flask app
+-│── app.py # Main Flask app
 │── requirements.txt # Dependencies
 │── .env # API keys (not pushed to GitHub)
 │── static/ # CSS, JS, images
@@ -34,8 +34,6 @@ Constitutional-Law-Chatbot/
 │── README.md # Project documentation
 │── .gitignore # Ignore sensitive files
 
-yaml
-Copy code
 
 ---
 
@@ -45,40 +43,30 @@ Copy code
    ```bash
    git clone https://github.com/1Khizar/Constitutional-Law-Chatbot.git
    cd Constitutional-Law-Chatbot
-Create virtual environment
 
-bash
-Copy code
-python -m venv venv
-source venv/bin/activate   # For Linux/Mac
-venv\Scripts\activate      # For Windows
-Install dependencies
+2. **Install dependencies**
+     ```bash
+   pip install -r requirements.txt
 
-bash
-Copy code
-pip install -r requirements.txt
-Set up environment variables
-Create a .env file in the project root:
+4. **Set up environment variables** 
+   Create a .env file in the project root:
+     ```bash
+   GROQ_API_KEY=your_api_key_here
 
-ini
-Copy code
-GROQ_API_KEY=your_api_key_here
+5. **Run the app**  
 Run the app
+  ```bash
+   python app.py
 
-bash
-Copy code
-python app.py
-Open in browser
-
-cpp
-Copy code
+6. **Run the app** 
+   Open in browser
+```bash
 http://127.0.0.1:5000/
-📸 Demo
-(Add screenshot here)
 
-markdown
-Copy code
+```
+## 📸 Demo  
+
 ![Constitutional Law Chatbot](static/screenshot.png)
-👨‍💻 Author
-Khizar Ishtiaq
-📌 LinkedIn
+
+## 👨‍💻 Author
+**Khizar Ishtiaq**
