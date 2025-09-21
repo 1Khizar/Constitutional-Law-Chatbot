@@ -26,8 +26,8 @@ Legal research in Pakistan is often complex and time-consuming. This project is 
 
 Constitutional-Law-Chatbot/
 -│── app.py # Main Flask app
-│── requirements.txt # Dependencies
-│── .env # API keys (not pushed to GitHub)
+-│── requirements.txt # Dependencies
+-│── .env # API keys (not pushed to GitHub)
 │── static/ # CSS, JS, images
 │── templates/ # HTML files
 │── data/ # Constitution dataset
@@ -50,6 +50,7 @@ Constitutional-Law-Chatbot/
 
 4. **Set up environment variables** 
    - Create a .env file in the project root:
+   
      ```bash
    GROQ_API_KEY=your_api_key_here
 
