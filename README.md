@@ -23,7 +23,7 @@ Legal research in Pakistan is often complex and time-consuming. This project is 
 ---
 
 ## 📂 Project Structure  
----
+```
 Constitutional-Law-Chatbot/
 │── app.py # Main Flask app
 │── requirements.txt # Dependencies
@@ -33,8 +33,10 @@ Constitutional-Law-Chatbot/
 │── data/ # Constitution dataset
 │── README.md # Project documentation
 │── .gitignore # Ignore sensitive files
+```
 
 ---
+
 
 ## ⚙️ Installation  
 
@@ -47,24 +49,24 @@ Constitutional-Law-Chatbot/
      ```bash
    pip install -r requirements.txt
 
-4. **Set up environment variables** 
-   - Create a .env file in the project root:
-   
-     ```bash
+4. **Set up environment variables**
+    ```bash
+   Create a .env file in the project root
    GROQ_API_KEY=your_api_key_here
 
-5. **Run the app**  
+5. **Run the app**
+     ```bash
 - Run the app
-  ```bash
 python app.py
 
 
-6. **Run the app** 
-   - Open in browser
-```bash
+6. **Run the app**
+
+      ```bash
+ - Open in browser
 http://127.0.0.1:5000/
 
-```
+
 ## 📸 Demo  
 
 <img width="702" height="435" alt="Constitutional Law Chatbot" src="https://github.com/user-attachments/assets/f91f12e2-48c4-4f1f-9ec6-095f492e5b5b" />
@@ -72,3 +74,4 @@ http://127.0.0.1:5000/
 
 ## 👨‍💻 Author
 **Khizar Ishtiaq**
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat&logo=linkedin)](https://linkedin.com/in/khizar-ishtiaq-716518315)
