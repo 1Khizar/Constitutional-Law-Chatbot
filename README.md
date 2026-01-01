@@ -3,9 +3,6 @@
 Legal research in Pakistan is often complex and time-consuming. This project is an **AI-powered Constitutional Law Chatbot** that delivers **precise answers from the Constitution in seconds**, helping lawyers, students, and researchers save valuable time.
 
 ---
-By leveraging advanced AI and verified constitutional sources, the chatbot ensures accurate, context-aware legal insights without unnecessary complexity
-
----
 
 ## 🚀 Features  
 - ⚖️ Provides accurate answers from the **Constitution of Pakistan**  
